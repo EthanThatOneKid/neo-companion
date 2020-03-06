@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/EthanThatOneKid/neo-companion#readme",
   "dependencies": {
-    "crx-hotreload": "^1.0.4"
+    "codemirror": "^5.52.0",
+    "crx-hotreload": "^1.0.4",
+    "nes.css": "^2.3.0"
   }
 }

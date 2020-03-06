@@ -1,4 +1,12 @@
 // Variables
 @import "./_variables.scss";
 
+// Global
+html, body {
+    width: 400px;
+}
+
 // Components
+.neo-title {
+    font-size: 0.05em;
+}
