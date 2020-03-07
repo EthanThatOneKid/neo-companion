@@ -13,18 +13,20 @@
   <link rel="stylesheet" href="node_modules/nes.css/css/nes.min.css">
 </head>
 <body>
-  <h2>🐱‍👤 Neo Companion</h2>
-  <div>
+  <div class="nes-container is-dark">
+    <h2>Neo Companion</h2>
     <div>
-      <div class="nes-field">
-        <input type="text" id="title_field" class="nes-input" placeholder="Project Title">
+      <div>
+        <div class="nes-field">
+          <input type="text" id="title_field" class="nes-input is-dark" placeholder="Project Title">
+        </div>
+        <textarea class="editor nes-textarea"></textarea>
       </div>
-      <textarea class="editor nes-textarea"></textarea>
+      <a class="nes-btn play-button" href="#">play</a>
+      <a class="nes-btn record-button" href="#">record</a>
     </div>
-    <a class="play-button"></a>
-    <a class="record-button"></a>
-    <a class="stop-button"></a>
   </div>
+
   <script src="scripts/popup.js"></script>
 </body>
 </html>

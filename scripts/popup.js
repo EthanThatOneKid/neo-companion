@@ -1,5 +1,9 @@
-// Globals
+// Element References
 const textareaRef = document.querySelector(".editor");
+const playButtonRef = document.querySelector(".play-button");
+const recordButtonRef = document.querySelector(".record-button");
+
+// Globals
 const editorOptions = {
     theme: "neo",
     lineWrapping: true,
