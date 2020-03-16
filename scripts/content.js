@@ -1,7 +1,7 @@
 // Content Script
 console.log("Hello from Neo Companion");
 
-chrome.runtime.sendMessage({
-    from: "content",
-    subject: "test"
+// Runtime Listeners
+chrome.runtime.onMessage.addListener((req, sender, res) => {
+    console.log({ req, sender, res });
 });
