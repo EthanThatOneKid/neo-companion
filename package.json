@@ -1,24 +1,52 @@
 {
-  "name": "neo-companion",
-  "version": "1.0.0",
-  "description": "A companion browser extension for the Neo language",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EthanThatOneKid/neo-companion.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EthanThatOneKid/neo-companion/issues"
-  },
-  "homepage": "https://github.com/EthanThatOneKid/neo-companion#readme",
-  "dependencies": {
-    "codemirror": "^5.52.0",
-    "crx-hotreload": "^1.0.4",
-    "nes.css": "^2.3.0"
-  }
+	"name": "neo-companion",
+	"version": "2020.0.0",
+	"description": "A companion browser extension for the Neo language.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development webpack -d",
+		"prod": "cross-env NODE_ENV=production webpack -p",
+		"watch": "cross-env NODE_ENV=watch webpack -d",
+		"clean": "rm -rf ./dist",
+		"clean:all": "rm -rf ./dist && rm -rf ./coverage && rm -rf ./node_modules",
+		"test": "jest",
+		"test:coverage": "jest --collect-coverage"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-redux": "^7.1.3",
+		"redux": "^4.0.5",
+		"styled-components": "^5.0.0",
+		"webext-redux": "^2.1.6"
+	},
+	"devDependencies": {
+		"@types/chrome": "^0.0.92",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^13.5.0",
+		"@types/react": "^16.9.11",
+		"@types/react-dom": "^16.9.5",
+		"@types/react-redux": "^7.1.7",
+		"@types/react-test-renderer": "^16.9.2",
+		"@types/styled-components": "^4.4.2",
+		"@types/webpack": "^4.41.3",
+		"awesome-typescript-loader": "^5.2.1",
+		"clean-webpack-plugin": "^3.0.0",
+		"copy-webpack-plugin": "^5.1.1",
+		"cross-env": "^6.0.3",
+		"html-webpack-plugin": "^3.2.0",
+		"jest": "^25.1.0",
+		"react-test-renderer": "^16.12.0",
+		"ts-jest": "^25.0.0",
+		"tslint": "^6.0.0",
+		"typescript": "^3.7.5",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10",
+		"webpack-extension-reloader": "^1.1.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/EthanThatOneKid/neo-companion.git"
+	}
 }
