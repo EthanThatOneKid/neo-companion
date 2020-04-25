@@ -10,16 +10,13 @@ This project containes a minimal setup for developing a performant and well stru
 * [redux](https://redux.js.org/)
 * [styled-components](https://www.styled-components.com/)
 
-
-
 ### Requirements:
 * [NodeJS](https://nodejs.org/en/) - Javascript runtime
 * [VSCode](https://code.visualstudio.com/) - Recomended editor
 * [Chrome](https://www.google.com/chrome/) or [Firefox](https://www.mozilla.org/en-US/firefox/) - Web browser
 
 ### How to run:
-### In terminal or command prompt
-
+#### In terminal or command prompt
 ```
 install dependencies
  - npm install
@@ -46,4 +43,4 @@ yarn commands will work too if yarn is installed.
 5. Thats it.
 
 ## License
-[MIT](LISCENSE)
+[MIT](LICENSE)
