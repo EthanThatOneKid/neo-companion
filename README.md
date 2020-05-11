@@ -1,7 +1,7 @@
-# 🐱‍👤 Neo Companion
-> A companion browser extension for the Neo language
+# Neo Companion 🐱‍👤
+> A companion browser extension for [the Neo language](https://neolang.dev/)
 
-## 🧠 Contributing
+## Contributing 🧠
 This project containes a minimal setup for developing a performant and well structured web extension. The extension contains a demonstration counter that is displayed on the popup and options pages as well as any open tab. 
 
 ### Good to know before using:
@@ -9,6 +9,7 @@ This project containes a minimal setup for developing a performant and well stru
 * [React](https://reactjs.org/)
 * [redux](https://redux.js.org/)
 * [styled-components](https://www.styled-components.com/)
+* [Simmer JS](https://github.com/gmmorris/simmerjs)
 
 ### Requirements:
 * [NodeJS](https://nodejs.org/en/) - Javascript runtime
