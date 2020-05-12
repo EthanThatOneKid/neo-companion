@@ -2,7 +2,7 @@ import { Action } from 'redux';
 
 export type EditorActionTypes = 'NEW_LINE' | 'REM_LINE' | 'CHANGE';
 export interface EditorPayload {
-	value: string[],
+	value?: string[],
 	index?: number,
 	lines?: string[]
 }
@@ -14,6 +14,6 @@ const defaultEditorPayload: EditorPayload = {
 	lines: []
 };
 
-export const newLine = (payload: EditorPayload = defaultEditorPayload) => ({ type: 'NEW_LINE', payload });
-export const removeLine = (payload: EditorPayload = defaultEditorPayload) => ({ type: 'REM_LINE', payload });
-export const change = (payload: EditorPayload = defaultEditorPayload) => ({ type: 'CHANGE', payload });
+export const newLine = (payload: EditorPayload = defaultEditorPayload): EditorActions => ({ type: 'NEW_LINE', payload });
+export const removeLine = (payload: EditorPayload = defaultEditorPayload): EditorActions => ({ type: 'REM_LINE', payload });
+export const change = (payload: EditorPayload = defaultEditorPayload): EditorActions => ({ type: 'CHANGE', payload });

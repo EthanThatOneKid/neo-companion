@@ -13,24 +13,27 @@ const editor: Reducer<IEditor, EditorActions> = (state = initialState, action: E
 	const { payload } = action;
 	switch (action.type) {
 		case 'NEW_LINE':
-			if (payload.lines !== undefined && payload.index !== undefined) {
-				payload.value.splice(payload.index, 0, ...payload.lines);
-				const { value } = payload;
+			if (payload !== undefined && payload.lines !== undefined && payload.index !== undefined) {
+				state.value.splice(payload.index, 0, ...payload.lines);
+				const { value } = state;
 				return { value };
 			}
 			return { ...state };
 
 		case 'REM_LINE':
-			if (payload.index !== undefined) {
-				payload.value.splice(payload.index, 1);
-				const { value } = payload;
+			if (payload !== undefined && payload.index !== undefined) {
+				state.value.splice(payload.index, 1);
+				const { value } = state;
 				return { value };
 			}
 			return { ...state };
 
 		case 'CHANGE':
-			const { value } = payload;
-			return { value };
+			if (payload !== undefined && payload.value !== undefined) {
+				const { value } = payload;
+				return { value };
+			}
+			return { ...state };
 		
 		default:
 			return { ...state };

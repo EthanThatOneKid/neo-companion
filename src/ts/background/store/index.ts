@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import counter, { ICounter } from './counter/reducer';
+import editor, { IEditor } from './editor/reducer';
 import settings, { IAppSettings } from './settings/reducer';
 
 import 'redux';
@@ -17,6 +18,7 @@ type OnError = (e: Error) => void;
 
 export interface IAppState {
 	counter: ICounter;
+	editor: IEditor;
 	settings: IAppSettings;
 }
 
@@ -44,6 +46,7 @@ export const saveState = (appstate: IAppState, success: OnSuccess = () => {}, er
 
 const reducers = combineReducers<IAppState>({
 	counter,
+	editor,
 	settings
 });
 
