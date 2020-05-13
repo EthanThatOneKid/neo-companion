@@ -4,22 +4,22 @@ import { Dispatch } from 'redux';
 import styled, { ThemeProvider } from 'styled-components';
 import { IAppState } from '../../../background/store';
 import { themes, ThemeTypes } from '../../../components/styles/themes';
-import Counter from '../../../containers/Counter';
+import Editor from '../../../containers/Editor';
 
 interface ICounterApp {
 	theme: ThemeTypes;
 	dispatch: Dispatch;
 }
 
-class CounterApp extends React.Component<ICounterApp> {
+class NeoApp extends React.Component<ICounterApp> {
 
 	render() {
 		return (
 			<ThemeProvider theme={themes[this.props.theme]}>
 				<React.Fragment>
-					<CounterAppContainer >
-						<Counter />
-					</CounterAppContainer>
+					<NeoAppContainer>
+						<Editor />
+					</NeoAppContainer>
 				</React.Fragment>
 			</ThemeProvider>
 		);
@@ -32,9 +32,9 @@ const mapStateToProps = (state: IAppState) => {
 	};
 };
 
-export default connect(mapStateToProps)(CounterApp);
+export default connect(mapStateToProps)(NeoApp);
 
-const CounterAppContainer = styled('div')`
+const NeoAppContainer = styled('div')`
 	position: fixed;
 	z-index: 9;
 	bottom: 0;

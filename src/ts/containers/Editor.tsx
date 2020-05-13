@@ -32,16 +32,22 @@ class Editor extends React.Component<IEditorProps> {
 	render() {
 		return (
 			<EditorContainer>
-				<SimpleCodeEditor
-					value={this.props.editor.value.join(lineBreak)}
-					onValueChange={code => this.change(code.split(lineBreak))}
-					highlight={code => code}
-					padding={10}
-					style={{
-						fontFamily: '"Fira code", "Fira Mono", monospace',
-						fontSize: 12,
-					}}
-				/>
+				<Display>
+					<SimpleCodeEditor
+						value={this.props.editor.value.join(lineBreak)}
+						onValueChange={code => this.change(code.split(lineBreak))}
+						highlight={code => code}
+						padding={10}
+						style={{
+							fontFamily: '"Fira code", "Fira Mono", monospace',
+							fontSize: 12,
+							fontVariantLigatures: 'common-ligatures',
+							backgroundColor: '#fafafa',
+							borderRadius: '3px',
+						}}
+					/>
+					<span>Current Element: {this.props.editor.interaction?.selector || ""}</span>
+				</Display>
 			</EditorContainer>
 		);
 	}
@@ -69,34 +75,4 @@ const EditorContainer = styled('div')`
 const Display = styled('div')`
 	font-size: 48px;
 	justify-self: center;
-`;
-
-const Controls = styled('div')`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	min-width: 200px;
-`;
-
-const Button = styled('button')`
-	display: inline-block;
-	position: relative;
-	padding: 10px 30px;
-	border: 1px solid transparent;
-	border-bottom: 4px solid rgba(0,0,0,0.21);
-	border-radius: 4px;
-	background: linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
-
-	color: white;
-	font-size: 22px;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.15);
-	text-decoration: none;
-
-	cursor: pointer;
-	outline: none;
-	user-select: none;
-
-	&:active {
-		background: #169499;
-	}
 `;

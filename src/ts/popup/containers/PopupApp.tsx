@@ -5,7 +5,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { IAppState } from '../../background/store';
 import GlobalStyle from '../../components/styles/GlobalStyle';
 import { themes, ThemeTypes } from '../../components/styles/themes';
-import Counter from '../../containers/Counter';
+// import Counter from '../../containers/Counter';
+import Editor from '../../containers/Editor';
 
 interface IPopupApp {
 	theme: ThemeTypes;
@@ -20,7 +21,8 @@ class PopupApp extends React.Component<IPopupApp> {
 				<React.Fragment>
 					<GlobalStyle />
 					<PopupAppContainer>
-						<Counter />
+						{/* <Counter /> */}
+						<Editor />
 					</PopupAppContainer>
 				</React.Fragment>
 			</ThemeProvider>
