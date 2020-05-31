@@ -1,6 +1,8 @@
 # Neo Companion 🐱‍👤
 > A companion browser extension for [the Neo language](https://neolang.dev/)
 
+## __(WIP)__
+
 ## Contributing 🧠
 This project contains a minimal setup for developing a performant and well structured web extension.
 The extension contains a demonstration counter that is displayed on the popup and options pages as well as any open tab. 
