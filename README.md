@@ -12,7 +12,6 @@ The extension contains a demonstration counter that is displayed on the popup an
 * [React](https://reactjs.org/)
 * [redux](https://redux.js.org/)
 * [styled-components](https://www.styled-components.com/)
-* [Simmer JS](https://github.com/gmmorris/simmerjs)
 * [react-simple-code-editor](https://github.com/satya164/react-simple-code-editor)
 
 ### Requirements:
