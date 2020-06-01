@@ -5,7 +5,6 @@
 
 ## Contributing 🧠
 This project contains a minimal setup for developing a performant and well structured web extension.
-The extension contains a demonstration counter that is displayed on the popup and options pages as well as any open tab. 
 
 ### Good to know before using:
 * [Typescript](https://www.typescriptlang.org/)

@@ -21,6 +21,13 @@ const assignListeners = () => {
 			const payload: EditorPayload = { interaction };
 			store.dispatch(interact(payload));
 		});
+		elementNode.addEventListener("click", (event) => {
+			const el = event.target as Element;
+			const selector = simmer(el);
+			const interaction: PageInteraction = { selector, click: true };
+			const payload: EditorPayload = { interaction };
+			store.dispatch(interact(payload));
+		});
 	}
 };
 

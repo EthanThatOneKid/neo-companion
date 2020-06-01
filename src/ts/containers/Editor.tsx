@@ -8,6 +8,13 @@ import { IEditor } from '../background/store/editor/reducer';
 import { default as SimpleCodeEditor } from 'react-simple-code-editor';
 
 const lineBreak = "\r\n";
+const shorten = (text: string, length: number, deliminator: string = "..."): string => {
+	if (text.length <= length) {
+		return text;
+	}
+	length -= deliminator.length;
+	return text.slice(0, length * 0.5) + deliminator + text.slice(text.length - (length * 0.5));
+};
 
 interface IEditorProps {
 	editor: IEditor;
@@ -46,7 +53,11 @@ class Editor extends React.Component<IEditorProps> {
 							borderRadius: '3px',
 						}}
 					/>
-					<span>Current Element: {this.props.editor.interaction?.selector || ""}</span>
+					<span>
+						{this.props.editor.interaction?.click ? "Clicked" : ""}
+						Current Element:
+						{shorten(this.props.editor.interaction?.selector || "", 25)}
+					</span>
 				</Display>
 			</EditorContainer>
 		);

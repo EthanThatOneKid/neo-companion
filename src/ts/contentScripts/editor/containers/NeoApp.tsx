@@ -4,21 +4,21 @@ import { Dispatch } from 'redux';
 import styled, { ThemeProvider } from 'styled-components';
 import { IAppState } from '../../../background/store';
 import { themes, ThemeTypes } from '../../../components/styles/themes';
-import Editor from '../../../containers/Editor';
+import Project from '../../../containers/Project';
 
-interface ICounterApp {
+interface INeoApp {
 	theme: ThemeTypes;
 	dispatch: Dispatch;
 }
 
-class NeoApp extends React.Component<ICounterApp> {
+class NeoApp extends React.Component<INeoApp> {
 
 	render() {
 		return (
 			<ThemeProvider theme={themes[this.props.theme]}>
 				<React.Fragment>
 					<NeoAppContainer>
-						<Editor />
+						<Project />
 					</NeoAppContainer>
 				</React.Fragment>
 			</ThemeProvider>
