@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { IAppState } from '../background/store';
-import { updateTitle, startRecording, stopRecording, ProjectPayload } from '../background/store/project/actions';
+import { updateTitle, startRecording, stopRecording, playScript, pauseScript, ProjectPayload } from '../background/store/project/actions';
 import { IProject } from '../background/store/project/reducer';
 import Editor from "./Editor";
 
@@ -28,6 +28,14 @@ class Project extends React.Component<IProjectProps> {
 		this.props.dispatch(stopRecording());
 	}
 
+	playScript() {
+		this.props.dispatch(playScript());
+	}
+
+	pauseScript() {
+		this.props.dispatch(pauseScript());
+	}
+
 	render() {
 		return (
 			<ProjectContainer>
@@ -43,6 +51,16 @@ class Project extends React.Component<IProjectProps> {
 										<a role="button" onClick={this.stopRecording.bind(this)}>Stop Recording</a>
 									) : (
 										<a role="button" onClick={this.startRecording.bind(this)}>Start Recording</a>
+									)
+							}
+						</li>
+						<li>
+							{
+								this.props.project.isPlaying
+									? (
+										<a role="button" onClick={this.pauseScript.bind(this)}>Pause Script</a>
+									) : (
+										<a role="button" onClick={this.playScript.bind(this)}>Play Script</a>
 									)
 							}
 						</li>
