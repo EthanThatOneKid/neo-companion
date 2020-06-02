@@ -1,7 +1,7 @@
 # Neo Companion 🐱‍👤
 > A companion browser extension for [the Neo language](https://neolang.dev/)
 
-## __(WIP)__
+## (WIP)
 
 ## Contributing 🧠
 This project contains a minimal setup for developing a performant and well structured web extension.
