@@ -15,3 +15,5 @@ const store = createStore(reducers, preloadedState, getReduxDevtoolsExtensionCon
 
 configureApp(store);
 wrapStore(store);
+
+export default store;

@@ -7,7 +7,7 @@ import { newLine, removeLine, change, EditorPayload } from '../background/store/
 import { IEditor } from '../background/store/editor/reducer';
 import { default as SimpleCodeEditor } from 'react-simple-code-editor';
 
-const lineBreak = "\r\n";
+const lineBreak = "\n";
 const shorten = (text: string, length: number, deliminator: string = "..."): string => {
 	if (text.length <= length) {
 		return text;
