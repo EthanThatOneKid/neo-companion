@@ -92,7 +92,7 @@ const ProjectContainer = styled('div')`
 `;
 
 const Display = styled('div')`
-	font-size: 48px;
+	font-size: 12pt;
 	justify-self: center;
 `;
 
