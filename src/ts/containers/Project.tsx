@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { IAppState } from '../background/store';
-import { updateTitle, startRecording, stopRecording, playScript, pauseScript, ProjectPayload } from '../background/store/project/actions';
+import { updateTitle, ProjectPayload } from '../background/store/project/actions';
 import { IProject } from '../background/store/project/reducer';
 import Editor from "./Editor";
 
@@ -20,51 +20,15 @@ class Project extends React.Component<IProjectProps> {
 		this.props.dispatch(updateTitle(payload));
 	}
 
-	startRecording() {
-		this.props.dispatch(startRecording());
-	}
-
-	stopRecording() {
-		this.props.dispatch(stopRecording());
-	}
-
-	playScript() {
-		this.props.dispatch(playScript());
-	}
-
-	pauseScript() {
-		this.props.dispatch(pauseScript());
-	}
-
 	render() {
 		return (
 			<ProjectContainer>
 				<Display>
-					<TitleInput type="text" value={this.props.project.title} onChange={this.updateTitle.bind(this)} />
-					<Menu>
-						<li><a role="button">Import</a></li>
-						<li><a role="button">Export</a></li>
-						<li>
-							{
-								this.props.project.isRecording
-									? (
-										<a role="button" onClick={this.stopRecording.bind(this)}>Stop Recording</a>
-									) : (
-										<a role="button" onClick={this.startRecording.bind(this)}>Start Recording</a>
-									)
-							}
-						</li>
-						<li>
-							{
-								this.props.project.isPlaying
-									? (
-										<a role="button" onClick={this.pauseScript.bind(this)}>Pause Script</a>
-									) : (
-										<a role="button" onClick={this.playScript.bind(this)}>Play Script</a>
-									)
-							}
-						</li>
-					</Menu>
+					<TitleInput
+						type="text"
+						value={this.props.project.title}
+						onChange={this.updateTitle.bind(this)}
+					/>
 					<Editor />
 				</Display>
 			</ProjectContainer>
@@ -97,10 +61,4 @@ const Display = styled('div')`
 `;
 
 const TitleInput = styled('input')`
-`;
-
-const Menu = styled('ul')`
-	margin: 0;
-	padding: 0;
-	list-style: none;
 `;

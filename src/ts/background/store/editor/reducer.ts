@@ -6,11 +6,15 @@ export interface IEditor {
 	value: string[];
 	lastInteractionAt: number;
 	interaction?: PageInteraction;
+	isPlaying: boolean;
+	isRecording: boolean;
 }
 
 const interactionCooldown: number = 0.1 * 1000; // 100ms
 const initialState: IEditor = {
 	value: [],
+	isPlaying: false,
+	isRecording: false,
 	lastInteractionAt: Date.now()
 };
 
@@ -42,10 +46,7 @@ const editor: Reducer<IEditor, EditorActions> = (state = initialState, action: E
 				state.lastInteractionAt = timestamp - interactionCooldown;
 			}
 			const isCooldownReached = timestamp > state.lastInteractionAt + interactionCooldown;
-			const isRecording = true;
-			// TODO: Move START_RECORDING and STOP_RECORDING to this state for easier access
-			// OR: Pass state between reducers like https://itnext.io/passing-state-between-reducers-in-redux-318de6db06cd
-			if (isRecording && isCooldownReached && payload !== undefined && payload.interaction !== undefined) {
+			if (state.isRecording && isCooldownReached && payload !== undefined && payload.interaction !== undefined) {
 				const { interaction } = payload;
 				const interactionCode = convertInteractionToNeoCode(interaction);
 				if (interactionCode !== null) {
@@ -54,6 +55,22 @@ const editor: Reducer<IEditor, EditorActions> = (state = initialState, action: E
 				}
 				return { ...state, interaction };
 			}
+			return { ...state };
+
+		case 'START_RECORDING':
+			state.isRecording = true;
+			return { ...state };
+
+		case 'STOP_RECORDING':
+			state.isRecording = false;
+			return { ...state };
+		
+		case 'PLAY_SCRIPT':
+			state.isPlaying = true;
+			return { ...state };
+		
+		case 'PAUSE_SCRIPT':
+			state.isPlaying = false;
 			return { ...state };
 		
 		default:

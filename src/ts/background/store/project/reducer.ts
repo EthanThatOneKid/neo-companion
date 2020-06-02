@@ -26,22 +26,6 @@ const project: Reducer<IProject, ProjectActions> = (state = initialState, action
 			}
 			return { ...state };
 
-		case 'START_RECORDING':
-			state.isRecording = true;
-			return { ...state };
-
-		case 'STOP_RECORDING':
-			state.isRecording = false;
-			return { ...state };
-		
-		case 'PLAY_SCRIPT':
-			state.isPlaying = true;
-			return { ...state };
-		
-		case 'PAUSE_SCRIPT':
-			state.isPlaying = false;
-			return { ...state };
-			
 		default:
 			return { ...state };
 	}
