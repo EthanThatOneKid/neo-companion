@@ -18,4 +18,5 @@ export const updateTitle = (payload: ProjectPayload = defaultProjectPayload): Pr
 export const startRecording = (payload: ProjectPayload = defaultProjectPayload): ProjectActions => ({ type: 'START_RECORDING', payload });
 export const stopRecording = (payload: ProjectPayload = defaultProjectPayload): ProjectActions => ({ type: 'STOP_RECORDING', payload });
 export const playScript = (payload: ProjectPayload = defaultProjectPayload): ProjectActions => ({ type: 'PLAY_SCRIPT', payload });
+export const pauseScript = (payload: ProjectPayload = defaultProjectPayload): ProjectActions => ({ type: 'PAUSE_SCRIPT', payload });
 

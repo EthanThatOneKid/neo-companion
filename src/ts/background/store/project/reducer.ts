@@ -2,8 +2,9 @@ import { Reducer} from 'redux';
 import { ProjectActions } from './actions';
 
 export interface IProject {
-	title: string,
-	isRecording: boolean
+	title: string;
+	isRecording: boolean;
+	isPlaying: boolean;
 }
 
 const createRandomAlphaNum = (len: number = 5): string => {
@@ -12,7 +13,8 @@ const createRandomAlphaNum = (len: number = 5): string => {
 
 const initialState: IProject = {
 	title: `neo-project-${createRandomAlphaNum()}`,
-	isRecording: false
+	isRecording: false,
+	isPlaying: false
 };
 
 const project: Reducer<IProject, ProjectActions> = (state = initialState, action: ProjectActions) => {
@@ -32,6 +34,14 @@ const project: Reducer<IProject, ProjectActions> = (state = initialState, action
 			state.isRecording = false;
 			return { ...state };
 		
+		case 'PLAY_SCRIPT':
+			state.isPlaying = true;
+			return { ...state };
+		
+		case 'PAUSE_SCRIPT':
+			state.isPlaying = false;
+			return { ...state };
+			
 		default:
 			return { ...state };
 	}
